@@ -1,0 +1,154 @@
+/* pages/user/index.wxss */
+@import '/assets/iconfont/iconfont.wxss';
+button::after {
+  border: none
+}
+.user-info{
+  width: 690rpx;
+  height: 405rpx;
+  background: linear-gradient(45deg,#c88db5 ,#b77caf,#a167a8,#975da5);
+  margin:0 auto;
+  margin-top: 40rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+/* .user-info-bg{
+  width: 690rpx;
+  height: 405rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+} */
+.avator-box{
+
+}
+.nologin-box{
+  width:126rpx;
+  height:126rpx;
+  margin:0 auto;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-top: 100rpx;
+  line-height: 126rpx;
+  overflow: hidden;
+  position: relative;
+}
+.haslogin{
+  display: flex;
+  flex-direction: column;
+  margin-top: 35rpx;
+}
+.haslogin .avator{
+  width:126rpx;
+  height:126rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  border:5rpx solid #fff;
+}
+.nologin-box .nologin-img{
+  width:56rpx;
+  height:48rpx;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.userName{
+  font-size: 28rpx;
+  color:#9055a2;
+  text-align: center;
+  background: #fff;
+  border-radius: 25rpx;
+  width:126rpx;
+  height:56rpx;
+  line-height: 56rpx;
+  margin-top: 22rpx;
+}
+.userName1{
+  font-size:36rpx;
+  color:#fff;
+  margin-top: 22rpx;
+  text-align: center;
+}
+.user-function{
+  margin-top: 35rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.user-item{
+  width:50%;
+}
+.user-item .num,.txt{
+  text-align: center;
+  color:#fff;
+  font-size: 34rpx;
+}
+.user-more{
+  width:690rpx;
+  margin:0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.user-more .item .item-common{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 85rpx;
+  border:1px solid #f3f3f3;
+  box-shadow:1rpx 3rpx 3rpx 1rpx #f3f3f3;
+  margin: 10rpx 0;
+  padding-left: 37rpx;
+  border-radius: 5rpx;
+  position: relative;
+}
+.user-more .item .item-common .item-icon{
+  line-height: 85rpx;
+}
+.user-more .item .item-common .item-icon .inconfont{
+  font-size: 36rpx;
+  color:#000;
+}
+.user-more .item .item-common .item-txt{
+  font-size: 36rpx;
+  color:#000;
+  margin-left: 47rpx;
+  line-height: 85rpx;
+}
+.user-more .item button{
+  background-color: #fff;
+  border-radius: 0;
+  padding: 0;
+}
+.user-more .item .item-common .icon-you1{
+  font-size: 48rpx;
+  color:#929292;
+  font-weight: bold;
+  position: absolute;
+  right:25rpx;
+  top:50%;
+  transform: translateY(-50%);
+}
+.ball{
+  height: 15rpx;
+  width: 15rpx;
+  background-color: #eed6e3;
+  border-radius: 50%;
+  position: absolute;
+  opacity: .8;
+}
+.ball1{
+  left:30rpx;
+  top:26rpx;
+}
+.ball2{
+  left:54rpx;
+  top:27rpx;
+}
+.ball3{
+  left:30rpx;
+  top:42rpx;
+}

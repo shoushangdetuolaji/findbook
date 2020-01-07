@@ -1,0 +1,81 @@
+<!--pages/answer/index.wxml-->
+<view class='nav' style='height:{{navH}}px'>
+  <view class='title_icon' style='margin-top:{{statusBarHeight}}px'>
+    <span class="iconfont icon-fanhui back" bindtap='navBack'></span>
+    <!-- <image src='/assets/img/fanhui.png' mode='aspectFit' class='back' bindtap='navBack'></image> -->
+    <view></view>
+    <span class="iconfont icon-shouye home" bindtap='navHome'></span>
+    <!-- <image src='/assets/img/navhome.png' mode='aspectFit' class='home' bindtap='navHome'></image> -->
+  </view>
+  <view class='title_text'>
+    课后答案
+  </view>
+</view>
+
+<view 
+  class="container" 
+  style="margin-top: {{navH}}px;height:calc(100vh - {{navH}}px)">
+  <view class="image-box" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <image 
+      mode="widthFix" 
+      src="{{currentPage_Url}}"
+      data-src="{{currentPage_Url}}"
+      bindtap="preview"></image>
+  </view>
+</view>
+<!--底部功能-->
+<view class="footer-function">
+  <view class="content">
+    <view class="left">
+      <image src="/assets/img/shuqian.png" class="image"></image>
+    </view>
+    <view class="middle">
+      <view class="left-bt common-bt">
+        <image
+          class="sameImage"
+          mode="aspectFit"
+          src="/assets/img/left.png"
+          bindtap="lastPage"></image>
+      </view>
+      <view class="middle-bt">
+        第 {{currentPage+1}} 页 / {{listData.length}} 页 
+      </view>
+      <view class="right-bt common-bt">
+        <image
+          class="sameImage"
+          mode="aspectFit"
+          src="/assets/img/right.png"
+          bindtap="nextPage"></image>
+      </view>
+    </view>
+    <view class="right" bindtap="showCatalogue">
+      <image src="/assets/img/mulu.png" class="image"></image>
+    </view>
+  </view>
+</view>
+<!--底部功能 结束-->
+
+<!--目录 侧边栏-->
+<view class="{{catalogueClassName}}">
+  <scroll-view
+    scroll-y
+    style="height:90%;margin-top:{{navH}}px;"
+    class="srcoll-block">
+    <view 
+      class="txt"
+      style="background-color:{{catoIndex+1==currentPage+1?'#c9c0c0d7':''}}"
+      hover-class="changePageColor"
+      wx:for-items="{{listData}}"
+      wx:for-item="item"
+      wx:for-index="catoIndex"
+      wx:key="index"
+      data-page="{{catoIndex+1}}"
+      data-url="{{item.url}}"
+      bindtap="changePage">
+      第{{catoIndex+1}}页
+    </view>
+  </scroll-view>
+</view>
+<!--目录 侧边栏 结束-->
+
+<view class="mask" bindtap="hideCato" wx:if="{{cataLogShow}}"></view>

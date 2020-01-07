@@ -1,0 +1,68 @@
+<!--pages/user/index.wxml-->
+<view class="container">
+  <view class="user-info">
+    <view 
+      class="avator-box"
+      wx:if="{{canIUse&&!hasUserInfo}}">
+      <view class="nologin-box">
+        <image class="nologin-img" src="/assets/img/iconAvator.jpg"></image>
+      </view>    
+      <button 
+        class="userName"
+        open-type="getUserInfo"
+        bindgetuserinfo="getUserInfo"
+        >
+        登录
+      </button>
+    </view>
+    <!--显示登录后头像-->
+    <view 
+      wx:if="{{hasUserInfo}}"
+      class="haslogin">
+      <image 
+          src="{{userInfo.avatarUrl}}"
+          class="avator">
+      </image>
+      <view class="userName1">{{userInfo.nickName}}</view> 
+    </view>
+    <view 
+      class="user-function"
+      wx:if="{{hasUserInfo}}">
+      <view class="user-item user-jsdd" bindtap="tapBorrow">
+        <view class="num">{{borrowNum}}</view>
+        <view class="txt">借书订单</view>
+      </view>
+      <view class="user-item user-wdgx" bindtap="tapContribute">
+        <view class="num">{{contributeNum}}</view>
+        <view class="txt">我的贡献</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="user-more">
+    <view class="item">
+      <view class="item-common item-wdsc" bindtap="toMycollectPage">
+        <view class="item-icon"><span class="iconfont icon-shu"></span></view>
+        <view class="item-txt">我的收藏</view>
+        <span class="iconfont icon-you1"></span>
+        <view class="ball ball1"></view>
+      </view>
+    </view>
+    <view class="item">
+      <button class="item-common item-wdsc" open-type="contact">
+        <view class="item-icon"><span class="iconfont icon-bianji"></span></view>
+        <view class="item-txt">意见反馈</view>
+        <span class="iconfont icon-you1"></span>
+        <view class="ball ball2"></view>
+      </button>
+    </view>
+    <view class="item">
+      <view class="item-common item-wdsc" bindtap="toAboutUS">
+        <view class="item-icon"><span class="iconfont icon-chengjiu"></span></view>
+        <view class="item-txt">关于我们</view>
+        <span class="iconfont icon-you1"></span>
+        <view class="ball ball3"></view>
+      </view>
+    </view>
+  </view>
+</view>

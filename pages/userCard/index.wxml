@@ -1,0 +1,65 @@
+<!--pages/userCard/index.wxml-->
+<!-- <view class='nav' style='height:{{navH}}px'>
+  <view class='title_icon'>
+    <image src='/assets/img/fanhui.png' mode='aspectFit' class='back' bindtap='navBack'></image>
+    <view></view>
+    <image src='/assets/img/navhome.png' mode='aspectFit' class='home' bindtap='navHome'></image>
+  </view>
+  <view class='title_text'>
+    我的-{{title}}
+  </view>
+</view> -->
+
+
+<view class="container">
+  <view class="box">
+    <form  bindsubmit="formSubmit" report-submit="true">
+      <view 
+        class="item" 
+        wx:for="{{listData}}" 
+        wx:key="index">
+        <view 
+          class="item-wrapper" 
+          data-id="{{item.id}}">
+          <view
+            data-id="{{item.id}}"
+            data-status="{{item.status}}"
+            bindtap="{{kindtoDetail}}" 
+            class="left">
+            <image src="{{item.first_book_url}}" mode="aspectFit" style="{{item.hasBorder}}"></image>
+          </view>
+          <view
+            data-id="{{item.id}}"
+            data-status="{{item.status}}"
+            bindtap="{{kindtoDetail}}" 
+            class="right">
+            <view class="bookName" 
+              wx:for="{{item.title_list}}" 
+              wx:for-item="title" 
+              wx:key="title"
+              wx:for-index="i"
+              wx:if="{{i < 3}}">
+              <!-- <block wx:for="{{item.title_list}}" wx:for-item="title" wx:key="title">
+                {{title}}
+              </block> -->
+              {{title}}
+            </view>
+            <view wx:if="{{item.title_list.length>3}}" class="bookName">...</view>
+            <view class="bookNum">{{itemTitle}} - 共{{item.book_amount}}本</view>
+            <view class="afterEdit">{{item.status}}</view>
+          </view>
+          <button form-type="submit" class="delBtn" data-id="{{item.id}}"></button>
+          <span class="iconfont icon-shanchu"></span>
+        </view>
+        <view class="time">申请时间：{{item.created_at}}</view>
+      </view>
+    </form>
+  </view>
+</view>
+
+<view class="noDataBox" wx:if="{{noDataShow}}"> 
+  <view class="box">
+    <span class="iconfont icon-zanwudingdan"></span>
+    <view class="txt">暂无{{itemTitle}}订单</view> 
+  </view>
+</view>

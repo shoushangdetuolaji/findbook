@@ -1,0 +1,36 @@
+<!--pages/collect/index.wxml-->
+<!-- <view class='nav' style='height:{{navH}}px'>
+  <view class='title_icon'>
+    <image src='/assets/img/fanhui.png' mode='aspectFit' class='back' bindtap='navBack'></image>
+    <view></view>
+    <image src='/assets/img/navhome.png' mode='aspectFit' class='home' bindtap='navHome'></image>
+  </view>
+  <view class='title_text'>
+    我的收藏
+  </view>
+</view> -->
+<view class="container">
+  <view class="collect-box">
+    <view class="item" 
+      bindtap="tobookDetail"
+      wx:for="{{collectList}}" 
+      wx:key="index"
+      data-bookid="{{item.id}}">
+      <view class="left">
+        <image src="{{item.resource_url}}" mode="aspectFill"></image>
+      </view>
+      <view class="right">
+        <view class="bookName">{{item.title}}</view>
+        <view class="bookEditor">{{item.author}}</view>
+        <view class="bookPublish">{{item.publisher}}</view>
+      </view>
+      <span class="iconfont icon-mendian-" data-id="{{item.id}}" catchtap="deleteThisCol"></span>
+    </view>
+  </view>
+  <view class="noDataBox" wx:if="{{collectList.length==0}}"> 
+    <view class="box">
+      <span class="iconfont icon-meiyouguanzhu"></span>
+      <view class="txt">你还没有收藏过课本噢~</view> 
+    </view>
+  </view>
+</view>

@@ -1,0 +1,116 @@
+<!--pages/search/index.wxml-->
+
+<view class="container">
+  <!--搜索框-->
+  <view class="search-box">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="name">
+        <!-- <view class="picker">
+          都得{{array[index]}}
+        </view> -->
+        <view class="picker-kind">
+          <view class="picker-kind-txt">{{objectArray[index].name}}</view>
+          <view class="picker-icon"><span class="iconfont icon-you1"></span></view>
+        </view>
+      </picker>
+    
+    <view class="search-input-box">
+      <input 
+        class="search"
+        placeholder='可输入书名、专业、作者、ISBN'
+        auto-focus="{{autoFocus}}"
+        bindconfirm="keyToEnter"
+        value='{{searchTxt}}'
+        bindinput="onInput"/>
+      <span class="iconfont icon-guanbi-" wx:if="{{searchTxt!=''}}" bindtap="onClearSearchValue"></span>
+    </view>
+    <view class="btn-search" bindtap="onSearch">确定</view>
+  </view>
+  <!--搜索框 end-->
+  <view class="alldata-box" wx:if="{{getSearchDataList}}">
+    <!--专业模块-->
+    <view class="professional-box">
+      <view class="title">
+        <text style="color:#999999;font-size:26rpx;">专业 </text>
+        <text style="color:#9055a2;font-size:26rpx;">{{majorsList.length}}条</text>
+      </view>
+      <view class="card-box">
+        <view 
+          class="card" 
+          hover-class='changeBack'
+          wx:for-items="{{majorsList}}"
+          wx:for-item="item"
+          wx:key="{{index}}"
+          data-name="{{item.name}}"
+          bindtap="toProfessionalPage">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+    <!--书籍模块-->
+    <view class="book-box">
+      <view class="title">
+        <text style="color:#999999;font-size:26rpx;">书籍 </text>
+        <text style="color:#9055a2;font-size:26rpx;">{{booksList.length}}条</text>
+      </view>
+      <scroll-view
+        scroll-y
+        style="height:calc(100vh - {{scorllHeight}}px);"
+        class="scroll-box"
+      >
+        <view 
+          class="item-box" 
+          wx:for-items="{{booksList}}" 
+          wx:for-item="item" 
+          wx:key="index" 
+          bindtap="todetailPage"
+          data-id="{{item.id}}">
+          <view class="left">
+            <image
+              lazy-load="{{true}}" 
+              src="{{item.resource_url}}" 
+              mode="aspectFill"></image>
+          </view>
+          <view class="right">
+            <view class="bookName">{{item.title}}</view>
+            <view class="bookAddress">出版社：{{item.publisher}}</view>
+            <view class="bookKuchun">库存：{{item.inventory}}</view>
+            <view class="bookFunction" style="display:none;">
+              <view>
+                <span class="iconfont icon-yinle"></span>
+                <view class="content">暂 无 答 案</view>
+              </view>
+              <view>
+                <span class="iconfont icon-mendian-"></span>
+                <view class="content">已 收 藏</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!--当搜索有数据的时候end-->
+
+  <!--历史记录-->
+  <histroyBox 
+    wx:if="{{hasHistoryShow}}"
+    listarr="{{listarr}}"
+    cardTosearch="{{cardTosearch}}"
+    bind:myevent="onMyEvent"
+    bind:myeventShownoSearchRecord="onMyEventShowNoSearchRecord"/>
+</view>
+<!--当请求没有数据的时候-->
+<view
+  wx:if="{{noDataSearchRecord}}" 
+  class="noSearchShow">
+  <span class="iconfont icon-kong"></span>
+  <view class="txt">暂无历史记录</view>
+</view>
+<!--当请求没有数据的时候-->
+<view
+  wx:if="{{getSearchDataIcon}}" 
+  class="noDataShow">
+  <span class="iconfont icon-wusousuo-"></span>
+  <view class="txt">暂无搜索结果</view>
+</view>
+<!--当搜索有数据的时候-->

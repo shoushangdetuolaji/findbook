@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/recentContriDetail/index",
+    "pages/answer/index",
+    "pages/zhuan/index",
+    "pages/search/index",
+    "pages/user/index",
+    "pages/professionalSearch/index",
+    "pages/aboutUs/index",
+    "pages/userCard/index",
+    "pages/detail/index",
+    "pages/collect/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#929292",
+    "selectedColor": "#9055a2",
+    "borderStyle": "black",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/img/home.png",
+        "selectedIconPath": "assets/img/home_on.png"
+      },
+      {
+        "pagePath": "pages/zhuan/index",
+        "text": "转转",
+        "iconPath": "assets/img/zhuan.png",
+        "selectedIconPath": "assets/img/zhuan_on.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "assets/img/user.png",
+        "selectedIconPath": "assets/img/user_on.png"
+      }
+    ]
+  }
+}

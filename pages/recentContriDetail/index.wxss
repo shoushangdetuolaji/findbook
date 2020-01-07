@@ -1,0 +1,72 @@
+/* pages/recentContriDetail/index.wxss */
+.wrapper{
+  width:690rpx;
+  margin:0 auto;
+}
+.head{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 20rpx;
+  position: relative;
+}
+.avator{
+  width:80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.userName{
+  font-size: 30rpx;
+  font-weight: 400;
+  color:#ffa800;
+  line-height: 80rpx;
+  margin-left: 30rpx;
+}
+.right-info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  bottom: 20rpx;
+  right:0rpx;
+}
+.right-info .hasContriNum{
+  color:#9055a2;
+  font-size: 18rpx;
+}
+.right-info .hasTime{
+  color:#999999;
+  font-size: 16rpx;
+  margin-left: 35rpx;
+  padding-top:5rpx;
+}
+.book-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.book-content .item{
+  width:203rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+.book-content .item image{
+  width:203rpx;
+  height:247rpx;
+  border:1rpx solid #e8e8e8;
+  box-shadow:2rpx 2rpx 5rpx #cacaca;
+  border-radius:8rpx;
+}
+.book-content .item .bookName,.bookAuthor{
+  font-size: 26rpx;
+  width:203rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  color:#333;
+
+}
+.book-content .item .bookAuthor{
+  font-size: 20rpx;
+  color:#999;
+}

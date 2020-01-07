@@ -1,0 +1,80 @@
+<!--pages/zhuan/_components/Contribute/index.wxml-->
+<view class="Contribute-box">
+  <form 
+    bindsubmit="formSubmit"
+    report-submit="true">
+    <view class="item">
+      <view class="item-title {{topMoveBook}}">
+        <span class="iconfont icon-shu {{topMoveColorBook}}"></span>
+        <view class="content {{topMoveColorBook}}">课本量</view>
+      </view>
+      <view class="item-input">
+        <input 
+          type="number" 
+          maxlength='3' 
+          bindfocus="focusBook" 
+          bindinput="getBookValue" 
+          bindblur='blurBook' 
+          name="formBookValue"
+          value="{{bookValue}}"
+          />
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-title {{topMoveContact}}">
+        <span class="iconfont icon-lianxi {{topMoveColorContact}}"></span>
+        <view class="content {{topMoveColorContact}}">联系号码</view>
+      </view>
+      <view class="item-input">
+        <input 
+          type="number" 
+          maxlength='11' 
+          bindfocus="focusContact" 
+          bindinput="getContactValue" 
+          bindblur='blurContact'
+          value="{{contactValue}}"
+          name="formContactValue"/>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-title top-move">
+        <span class="iconfont icon-sushe top-move-color"></span>
+        <view class="content top-move-color">服务地址</view>
+      </view>
+      <view class="item-input">
+          <input 
+            type="text" 
+            placeholder='如黎灿楼网园' 
+            placeholder-class='placeholderClass' 
+            disabled 
+            bindtap="toPickAddress" 
+            value="{{areaInfo}}"
+            name="formAreaValue"/>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item-title top-move">
+        <span class="iconfont icon-sushe top-move-color"></span>
+        <view class="content top-move-color">宿舍号</view>
+      </view>
+      <view class="item-input">
+        <input 
+          type="number" 
+          placeholder-class="placeholderClass" 
+          placeholder="如308" 
+          maxlength='3' 
+          bindfocus="focusDormNum" 
+          bindinput="getDormNumValue" 
+          bindblur='blurDormNum'
+          value="{{dormNumValue}}"
+          name="formDormValue"/>
+      </view>
+    </view>
+    <!--提交按钮-->
+    <button
+      disabled="{{canIclick}}"
+      class="btn {{btnBgColor}}" 
+      form-type="submit">确 认 提 交</button>
+    <!--提交按钮 结束-->
+  </form>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": { 
+    "histroyBox":"_components/histroy/index"
+  },
+  "navigationBarTitleText": "搜索-找课本"
+}

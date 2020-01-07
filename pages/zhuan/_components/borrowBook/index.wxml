@@ -1,0 +1,63 @@
+<!--pages/zhuan/_components/borrowBook/index.wxml-->
+<view class="borrowBook-box">
+  <form 
+    bindsubmit="formSubmit"
+    report-submit="true">
+    <view class="book-list">
+      <view 
+        wx:for-items="{{borrowList}}"
+        wx:for-item="item"
+        wx:key="{{index}}"
+        class="book-item"
+        data-bookid="{{item.id}}"
+        bindlongpress="deleteBook">
+        <image
+          bindtap="previewImage"
+          mode="aspectFill" 
+          class="book-cover"
+          data-src="{{item.resource_url}}"
+          src="{{item.resource_url}}"></image>
+      </view>
+      <view class="add-more" bindtap="toBorrowMore" wx:if="{{borrowList.length<3}}">
+        <image mode="center" src="/assets/img/icon-test.png"></image>
+      </view>
+    </view>
+    <!--表单内容-->
+    <view class="borrow-form">
+      <view class="item">
+        <view class="item-title top-move">
+          <span class="iconfont icon-shijian top-move-color"></span>
+          <view class="content top-move-color">上门时间</view>
+        </view>
+        <view class="item-input">
+            <input 
+              type="text"
+              value="{{time}}"
+              disabled
+              name="formTimeValue" 
+              data-current="4"/>
+          <!-- <input type="number" maxlength='3' bindfocus="focusTime" bindinput="getTimeValue" bindblur='blurTime'/> -->
+        </view>
+      </view>
+      <view class="item">
+        <view class="item-title {{topMoveContact}}">
+          <span class="iconfont icon-lianxi {{topMoveColorContact}}"></span>
+          <view class="content {{topMoveColorContact}}">联系号码</view>
+        </view>
+        <view class="item-input">
+          <input 
+            type="number" 
+            maxlength='11' 
+            bindfocus="focusContact" 
+            bindinput="getContactValue" 
+            bindblur='blurContact'
+            name="formContactValue"
+            value="{{contactValue}}"/>
+        </view>
+      </view>
+      <!--提交按钮-->
+      <button class="btn {{btnBgColor}}" form-type="submit" disabled="{{canIclick}}">确 认 提 交</button>
+      <!--提交按钮 结束-->
+    </view>
+  </form>
+</view>

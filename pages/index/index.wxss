@@ -1,0 +1,234 @@
+/**index.wxss**/
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */
+@import '/assets/iconfont/iconfont.wxss';
+.container{
+
+  width:100vw;
+  padding: 0;
+}
+.indexBg{
+  width: 100vw;
+  border: 0;
+}
+.search-box{
+   width:100vw;
+   z-index: 1000;
+   position: relative;
+   /* background: linear-gradient(45deg,#c88db5 ,#b77caf,#a167a8,#975da5); */
+}
+.search-input{
+  width:600rpx;
+  height:80rpx;
+  margin:0 auto;
+  background: rgba(255,255,255, .2);
+  border-radius: 35rpx;
+  position: absolute;
+  top: 80rpx;
+  left:50%;
+  transform: translateX(-50%);
+}
+.search-input .icon-sousuo{
+  font-size: 30rpx;
+  color:#fff;
+  position: absolute;
+  left:90rpx;
+  top:26rpx;
+}
+.search-input .search{
+  height:80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  padding-left: 140rpx;
+}
+.search-input-img{
+  width:218rpx;
+  height:55rpx;
+  border-bottom:2rpx solid #929292;
+  display: flex;
+  flex-direction: row;
+  line-height: 57rpx;
+  position: absolute;
+  top:90rpx;
+  left:50rpx;
+}
+.search-input-img .icon-sousuo{
+  font-size: 32rpx;
+  color:#333333;
+  font-weight:500;
+}
+.search-input-img .txt{
+  color:#333333;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+  font-weight:500;
+}
+.hotSearch-box,.recentContribu-box{
+  width:658rpx;
+  margin:0 auto;
+  margin-top: 20rpx;
+}
+.hotSearch-box{
+  margin-top: 15rpx;
+}
+.recentContribu-box{
+  margin-bottom: 30rpx;
+}
+.title .title-name{
+  font-size: 29rpx;
+  text-align: center;
+  color:#333333;
+  position: relative;
+  font-weight: 500;
+}
+.icon-you{
+  vertical-align: middle;
+  font-size: 24rpx;
+  color:#333333;
+}
+.title-balloon1{
+  width:25rpx;
+  height: 25rpx;
+  background-color: #eed6e3;
+  border-radius: 50%;
+  position: absolute;
+  left:38%;
+  top:0;
+  z-index: -1;
+}
+.title-balloon2{
+  width:8rpx;
+  height: 8rpx;
+  background-color: #eed6e3;
+  border-radius: 50%;
+  position: absolute;
+  left:42%;
+  top:0;
+  z-index: -1;
+}
+.hotSearch-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.hotSearch-content .item{
+  padding: 12rpx 18rpx;
+  color:#9055a2;
+  font-size: 26rpx;
+  border:1rpx solid #9f4de9;
+  border-radius: 10rpx;
+  margin-right: 40rpx;
+  margin-top: 25rpx;
+}
+.hotSearch-content .itemOn{
+  background-color: #bc99c7;
+  font-size: #9055a2;
+}
+.hotSearch-content .item:last-child{
+  margin-right: 0rpx;
+}
+.hotSearch-content .item:nth-child(4){
+  margin-right: 0rpx;
+}
+.light-bg{
+  background-color:#bc99c7;
+}
+.recentContribu-box{
+  margin-top: 30rpx;
+}
+.recentContribu-content{
+  margin-top: 25rpx;
+  position: relative;
+  padding: 0 22rpx;
+  padding-bottom: 22rpx;
+  border: 1rpx solid #eaeaea;
+
+  border-radius: 14rpx;
+  box-shadow:3px 2px 4px #eaeaea;
+}
+.recentUser{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 18rpx;
+}
+.recentUser .left .userAvator{
+  width: 61rpx;
+  height: 61rpx;
+  border-radius: 50%;
+}
+.recentUser .right{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 12rpx;
+}
+.recentUser .right .userName{
+  font-size: 22rpx;
+  color:#ffa800;
+}
+.recentUser .right .info{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.recentUser .right .info .recentTime{
+  color:#999;
+  font-size: 16rpx;
+  line-height: 1.5;
+}
+.recentUser .right .info .userDo{
+  color:#9055a2;
+  font-size: 18rpx;
+  margin-left: 40rpx;
+  line-height: 1;
+}
+.userBooks{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.userBooks .item{
+  flex-direction: column;
+  margin-right: 35rpx;
+}
+.userBooks .item:last-child{
+  margin-right: 0rpx;
+}
+.userBooks .item .book-cover{
+  width:172rpx;
+  height: 210rpx;
+  border:1rpx soli #e8e8e8;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx #e8e8e8;
+  border-radius: 8rpx;
+}
+.userBooks .item .book-name{
+  font-size: 24rpx;
+  color:#333333;
+  width: 172rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.userBooks .item .book-lend{
+  font-size: 20rpx;
+  color:#999999;
+}

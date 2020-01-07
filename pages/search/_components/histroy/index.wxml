@@ -1,0 +1,18 @@
+<!--pages/search/_components/histroy/index.wxml-->
+<view class="history-box" wx:if="{{hasHistoryShow}}">
+  <view class="history-title">
+    搜索历史
+    <span class="iconfont icon-shanchu" bindtap="delHistory"></span>
+  </view>
+  <view class="card-box">
+    <view 
+      class="card"
+      wx:for="{{listarr}}"
+      data-text="{{item}}"
+      hover-class='tapColor'
+      bindtap='this_value'
+      wx:key="key">
+        {{item}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,101 @@
+
+<view class="container">
+  <!--搜索框-->
+  <view class="search-box">
+    <image class="indexBg" src="/assets/img/index.jpg" mode="widthFix"></image>
+    <view class="search-input" style='display:none;'>
+      <view style="position:relative;">
+        <input 
+          disabled
+          bindtap="toSearchPage"
+          class="search skeleton-rect" 
+          placeholder="请输入书名、专业、主编、ISBN"
+          placeholder-style="color:#ffffff;" />
+        <span class="iconfont icon-sousuo"></span>
+      </view>
+    </view>
+    <view class="search-input-img" bindtap="toSearchPage">
+      <span class="iconfont icon-sousuo"></span>
+      <view class="txt">搜索看看</view>
+    </view>
+  </view>
+  <!--搜索框 end-->
+  <!--热门搜索-->
+  <view class="hotSearch-box">
+    <view class="title">
+      <view class="title-name">
+        热门搜索
+        <view class="title-balloon1"></view>
+        <view class="title-balloon2"></view>
+      </view>
+    </view>
+    <view class="hotSearch-content">
+      <view
+        wx:for="{{hotSearchList}}"
+        wx:key="{{index}}"
+        class="item skeleton-rect" 
+        hover-class="light-bg"
+        bindtap="arriveHotSearchPage"
+        data-name="{{item}}">
+        {{item}}
+      </view>
+    </view>
+  </view>
+   <!--热门搜索 end-->
+   <!--近期贡献-->
+   <view class="recentContribu-box">
+    <view class="title">
+        <view class="title-name">
+          近期贡献
+          <view class="title-balloon1"></view>
+          <view class="title-balloon2"></view>
+        </view>
+      </view>
+      <view 
+        class="recentContribu-content"
+        wx:for-items="{{recentContriList}}"
+        wx:for-item="item"
+        wx:key="{{index}}">
+        <view class="recentUser">
+          <view class="left">
+            <image 
+              src="{{item.user.avatarUrl}}" 
+              mode="aspectFit"
+              class="userAvator skeleton-radius">
+            </image>
+          </view>
+          <view class="right" bindtap="toRecentContriPage" data-id="{{item.id}}">
+            <view class="userName skeleton-rect">{{item.user.nickName}}</view>
+            <view class="info">
+              <view class="recentTime skeleton-rect">{{item.created_at}}</view>
+              <view class="userDo skeleton-rect">已贡献{{item.textbooks_count}}本书</view>
+            </view>
+          </view>
+        </view>
+        <!--用户下面上传的书本-->
+        <view class="userBooks">
+          <view 
+            class="item" 
+            wx:for-items="{{item.textbooks}}"
+            wx:for-item="bookItem"
+            wx:key="index"
+            wx:for-index="i"
+            wx:if="{{i < 3}}"
+            data-bookid="{{bookItem.id}}"
+            bindtap="toDetailPage">
+            <image 
+              src="{{bookItem.resource_url}}"
+              class="book-cover skeleton-rect"
+              mode="aspectFill"></image>
+            <view class="book-name">{{bookItem.title}}</view>
+            <view class="book-lend">{{bookItem.borrowed_count}}人借过</view>
+          </view>
+        </view>
+        <!--用户下面上传的书本 end-->
+      </view>
+   </view>
+   <!--近期贡献 end-->
+</view>
+
+
+

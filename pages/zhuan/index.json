@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "borrowBook":"_components/borrowBook/index",
+    "Contribute": "_components/Contribute/index"
+  },
+  "navigationBarTitleText": "转转"
+}

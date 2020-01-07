@@ -1,0 +1,116 @@
+/* pages/zhuan/_components/borrowBook/index.wxss */
+@import '/assets/iconfont/iconfont.wxss';
+.borrowBook-box{
+  width: 690rpx;
+  height: 260rpx;
+  margin:0 auto;
+  margin-top: 60rpx;
+  animation: myfirst 1s;
+}
+@keyframes myfirst
+{
+  from {transform:translateX(500rpx);opacity:0}
+  to {transform:translateX(0rpx);opacity:1}
+}
+.book-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+}
+.book-item{
+  height: 260rpx;
+  width: 180rpx;
+  border-radius: 5rpx;
+  margin-right: 75rpx;
+  box-shadow:2rpx 2rpx 5rpx #cacaca;
+  /* box-shadow:2rpx 2rpx 5rpx #929292; */
+
+}
+.book-item image{
+  height: 260rpx;
+  width: 180rpx;
+  border-radius: 5rpx;
+}
+.add-more{
+  height: 256rpx;
+  width: 178rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #cacaca;
+}
+.add-more image{
+  height: 256rpx;
+  width: 178rpx;
+}
+.borrow-form{
+  width:460rpx;
+  margin:0 auto;
+  margin-top: 91rpx;
+}
+.item{
+  position: relative;
+  height: 142rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #9055a2;
+}
+.item-title{
+  align-content: center;
+  position: absolute;
+  bottom: 35rpx;
+  left:0;
+  transition: bottom ease-in-out .5s;
+}
+.item-title .content,.iconfont{
+  font-size: 32rpx;
+  color:#333333;
+  display: inline-block;
+  transition: all ease-in-out .5s;
+}
+.item-title .content{
+  margin-left: 8rpx;
+}
+.item-input{
+  position: absolute;
+  bottom: 0;
+  left: 0; 
+}
+.item-input input{
+  height:30rpx!important;
+  line-height: 30rpx!important;
+  padding-left: 10rpx!important;
+  font-size: 28rpx;
+  color:#333333;
+}
+.top-move{
+  bottom:57rpx;
+}
+.top-move-color{
+   color:#999999!important;
+   font-size: 22rpx!important;
+}
+.btn{
+  height: 85rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 85rpx;
+  color:#fff;
+  border-radius: 35rpx;
+  border: 1rpx solid #e7e7e7;
+  background: #929292;
+  box-shadow: 0 0 20rpx #e5e5e5;
+  font-size: 30rpx;
+  margin-top: 120rpx;
+  transition:background ease-in-out .2s;
+}
+button[disabled] {
+  color:#fff!important;
+  background: #929292!important;
+  border: 1rpx solid #e7e7e7!important;
+}
+.btnBgColor-on{
+  background:linear-gradient(45deg,#c88db5 ,#b77caf,#a167a8,#975da5);
+  transition:background .5s;
+}
+.placeholderClass{
+  font-size: 22rpx;
+  color:#999999;
+}

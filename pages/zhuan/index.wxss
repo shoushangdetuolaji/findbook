@@ -1,0 +1,144 @@
+/* pages/zhuan/index.wxss */
+@import '/assets/iconfont/iconfont.wxss';
+page{
+  position: relative;
+}
+.tab-switch{
+  width: 690rpx;
+  margin:0 auto;
+  margin-top: 30rpx;
+  display: flex;
+  height: 63rpx;
+  line-height: 63rpx;
+  box-sizing: border-box;
+  box-shadow:0px 0rpx 20rpx #e8e8e8;
+  position: relative;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+  background-color: #ffff;
+  /* border:2rpx solid #f2f2f2; */
+  overflow: hidden;
+}
+.switch-item{
+  flex: 1;
+}
+.switch-button{
+  position: absolute;
+  left: 0;
+  width:50%;
+  height: 100%;
+  border-radius: 10rpx;
+  transition: left ease-in-out .2s;
+  background: linear-gradient(45deg,#c88db5 ,#b77caf,#a167a8,#975da5);
+}
+.right-move{
+  left: 50%;
+}
+.switch-item,.switch-button .content{
+  text-align: center;
+  color:#929292;
+  font-size: 26rpx;
+}
+.switch-button .content{
+  color:#fff;
+}
+
+
+
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.state-item {
+  width: 20%;
+  height: 70rpx;
+  font-size: 11pt;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 2rpx solid #ddd;
+}
+
+.border.state-item {
+  border: 2rpx solid #c4245c;
+}
+
+.date {
+  min-width: 40%;
+  display: flex;
+  font-size: 11pt;
+  color: #bdbdbd;
+  align-items: center;
+}
+
+.date-btn {
+  min-width: 80%;
+  font-size: 12pt;
+  background-color: #c4245c;
+  color: #fff;
+  position: fixed
+}
+
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+.fakePicker-box{
+  width:460rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  position: absolute;
+  left:50%;
+  top:145%;
+  transform: translateX(-50%);
+  background-color: #c88db5;
+  z-index: 9;
+  opacity: 0;
+}
+
+.picker-head{
+  width:100%;
+  height:80rpx;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.guide-box{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+}
+.slide-image{
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,0 +1,108 @@
+<!--pages/professionalSearch/index.wxml-->
+<!--WXML 自定义顶部状态栏div结构-->
+<!-- <view class='nav' style='height:{{navH}}px'>
+  <view class='title_icon'>
+    <image src='/assets/img/fanhui.png' mode='aspectFit' class='back' bindtap='navBack'></image>
+    <view></view>
+    <image src='/assets/img/navhome.png' mode='aspectFit' class='home' bindtap='navHome'></image>
+  </view>
+  <view class='title_text'>
+    专业搜索
+  </view>
+</view> -->
+
+<view class="container">
+  <view class="wrapper">
+    <view class="head">
+      <!-- <view class="soft-kind">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="name">
+          <view class="picker">{{objectArray[index].name}}</view>
+          <view class="icon-box">
+            <span class="iconfont icon-you1"></span>
+          </view>
+        </picker>
+      </view> -->
+      <view class="title" bindtap="selectDistrict">
+        {{bookname}}
+        <span class="iconfont icon-you1"></span>  
+      </view>
+      <view class="sumNum">共{{bookLength}}本</view>
+    </view>
+    <view class="tabs">
+      <van-tabs animated bind:change="onChange" color="#9055a2" border="{{false}}" line-width="10">
+        <van-tab 
+          title="{{item.name}}" 
+          wx:for="{{objectArray}}" 
+          wx:key="{{index}}"
+          wx:for-item="item" 
+          data-value="{{item.id}}">
+              <view class="listData">
+                <view class="title">
+                  <text style="color:#999999;margin-right:14rpx;">{{item.name}}</text>相关书籍共{{bookList.length}}本
+                </view>
+                 <scroll-view
+                    scroll-y
+                    style="height:calc(100vh - {{scrollHeight}}px - 20rpx)"
+                    class="scroll-box">
+                    <view 
+                      class="list-item" 
+                      wx:for-items="{{bookList}}"
+                      wx:for-item="item"
+                      wx:key="index" 
+                      data-bookid="{{item.id}}"
+                      bindtap="todetailPage">
+                      <view class="left">
+                        <image src="{{item.resource_url}}"></image>
+                      </view>
+                      <view class="right">
+                        <view class="bookName">{{item.name}}</view>
+                        <view class="bookAddress">出版社：{{item.publisher}}</view>
+                        <view class="bookKuchun">库存：{{item.inventory}}</view>
+                        <view class="bookFunction">
+                          <view>
+                            <span class="iconfont icon-yinle"></span>
+                            <view class="content">暂 无 答 案</view>
+                          </view>
+                          <view>
+                            <span class="iconfont icon-mendian-"></span>
+                            <view class="content">已 收 藏</view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </scroll-view>
+              </view> 
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>
+
+
+<view 
+  class="dialog-mask" 
+  style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" 
+  bindtap="hideCitySelected">
+</view>
+<!--城市三级联动-->
+<!--使用动画时不能wx:if="{{city.length>0&&isVisible}}" ，不能hidden=''属性否则无动画效果-->
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <!-- <view style="height:10%;width:95%;margin-top:10rpx" class="picker-head"> -->
+  <view class="picker-head">
+    <text catchtap="cityCancel" style="color:#ccc;padding:0 40rpx;">取消</text>
+    <text style="float: right;color:#25b864;padding:0 40rpx;" catchtap="citySure">确定</text>
+  </view>
+  <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+  <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="picker-item" wx:key="index">
+        {{item.name}}
+      </view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="picker-item" wx:key="index">
+        {{item.name}}
+      </view>
+    </picker-view-column>
+  </picker-view>
+</view>

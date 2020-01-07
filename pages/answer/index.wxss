@@ -1,0 +1,132 @@
+/* pages/answer/index.wxss */
+@import '/assets/iconfont/iconfont.wxss';
+.nav{
+  background-color: #fff;
+  box-shadow:0px 0rpx 20rpx #e8e8e8;
+}
+.title_text{
+  color:#000;
+  font-weight: 500;
+}
+.container{
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+.image-box{
+  width: 100%;
+}
+.container image{
+  width: 100%;
+}
+.footer-function{
+  position: fixed;
+  bottom: 0;
+  width:100vw;
+  height:100rpx;
+  background-color: #fff;
+  box-shadow:0rpx 0rpx 5rpx #333333;
+}
+.content{
+  width:100vw;
+  line-height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  font-size: 28rpx;
+}
+.content .image{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.content .left{
+  visibility: hidden;
+}
+.content .left,.right{
+  position: relative;
+}
+.content .middle{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+/* .content .middle .common-bt{
+  width:64rpx;
+  height:64rpx;
+} */
+.content .middle .common-bt:first-child{
+  margin-right: 10rpx;
+}
+.content .middle .common-bt:last-child{
+  margin-left: 10rpx;
+}
+/* .content .middle .common-bt image{
+  width:30rpx;
+  height:30rpx;
+  vertical-align: middle;
+} */
+.sameImage{
+   width:40rpx;
+  height:40rpx;
+  vertical-align: middle;
+}
+.catalogue{
+  position: fixed;
+  right:0;
+  top:0;
+  width:25%;
+  height:100vh;
+  background-color: #fffbfbfa;
+  box-shadow:-2rpx 0px 2rpx #9055a2;
+  animation: myFlow .5s;
+}
+.catalogue2{
+  position: fixed;
+  right:-30%;
+  top:0;
+  width:25%;
+  height:100vh;
+  background-color: #fffbfbfa;
+  box-shadow:-2rpx 0px 2rpx #9055a2;
+  transition: right ease-in-out .5s;
+}
+.catalogueBack2{
+  position: fixed;
+  right:0;
+  top:0;
+  width:25%;
+  height:100vh;
+  background-color: #fffbfbfa;
+  box-shadow:-2rpx 0px 2rpx #9055a2;
+  transition: right ease-in-out .5s;
+}
+
+.srcoll-block{
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+}
+.srcoll-block .txt{
+  text-align: center;
+  font-size:28rpx;
+  background-color: #fffbfbfa;
+  height:80rpx;
+  line-height: 80rpx;
+}
+.changePageColor{
+  opacity: 0.9;
+  background-color:#c9c0c0d7!important;
+}
+.mask{
+  width:calc(100vw - 25%);
+  height:100vh;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 999;
+}

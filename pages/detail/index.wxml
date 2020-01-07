@@ -1,0 +1,60 @@
+<!--pages/detail/index.wxml-->
+<!--WXML 自定义顶部状态栏div结构-->
+<view class='nav' style='height:{{navH}}px'>
+  <view class='title_icon' style='margin-top:{{statusBarHeight}}px'>
+    <span class="iconfont icon-fanhui back" bindtap='navBack'></span>
+    <!-- <image src='/assets/img/fanhui.png' mode='aspectFit' class='back' bindtap='navBack'></image> -->
+    <view></view>
+    <span class="iconfont icon-shuaxin home" bindtap='navZhuanzhuan'></span>
+    <!-- <image src='/assets/img/navhome.png' mode='aspectFit' class='home' bindtap='navHome'></image> -->
+  </view>
+  <view class='title_text'>
+    书本详情
+  </view>
+</view>
+<view class="container" style="margin-top:{{navH}}px">
+  <view class="wrapper">
+    <view class="book-card" style="height:{{cardHeight}}">
+      <view class="left">
+        <image
+          class="detail-cover"
+          mode="aspectFill"
+          src="{{bookDetail.resource_url}}"
+          data-src="{{bookDetail.resource_url}}"
+          bindtap="preview">
+        </image>
+      </view>
+      <view class="right">
+        <view class="book-name">{{bookDetail.title}}</view>
+        <view class="book-bianhao">ISBN：{{bookDetail.ISBN}}</view>
+        <view class="book-writer">作 者：{{bookDetail.author}}</view>
+        <view class="book-publish">出版社: {{bookDetail.publisher}}</view>
+        <view class="book-desc" wx:if="{{introShow}}">简介：{{introduction}}</view>
+        <view class="book-desc-all" wx:else>
+          简介：{{bookDetail.introduction}}<text bindtap="hideMore" style="font-size:22rpx;color:#9055a2;">(收起)</text>
+        </view>
+        <view class="book-desc-more" wx:if="{{zhankaiShow}}" bindtap="showMore">(展开)</view>
+      </view>
+    </view>
+    <view class="leastNum">库存: {{bookDetailInventory}}</view>
+
+    <view class="book-function">
+      <view class="item-function" bindtap="colletThisBook" data-kind="{{collectKind}}" style="color:{{collectColor}}">
+        <span class="iconfont icon-xiangji" style="color:{{collectColor}}"></span>收 藏
+      </view>
+      <view class="item-function" data-answerid="{{bookDetail.answer_id}}" style="background-color:{{isAnswer?'#e6bfd5':'#dadada'}}" bindtap="toAnwserPage"><span class="iconfont icon-mulu"></span>答 案</view>
+      <view class="item-function {{noInventory}}" data-kind="{{borrowKind}}" bindtap="borrowThisBook" style="background-color:{{isBgColor?'#d2c6cd':''}}"><span class="iconfont icon-yinle"></span>{{isBorrow?'借 阅 中':'借 阅'}}</view>
+    </view>
+
+    <view class="similar-tip">
+      此书在本校共应用于以下{{marjorsList.length}}个专业
+    </view>
+    <view 
+      class="similar-item" 
+      wx:for-items="{{marjorsList}}" 
+      wx:for-item="item"
+      wx:key="{{index}}">
+      <text bindtap="toProfessionalSearchPage" data-name="{{item.name}}">{{item.name}}</text>
+      </view>
+  </view>
+</view>

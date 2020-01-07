@@ -1,0 +1,88 @@
+/* pages/collect/index.wxss */
+@import "/assets/iconfont/iconfont.wxss";
+.container{
+  height: 100%;
+}
+.collect-box{
+  width:656rpx;
+  margin:0 auto;
+  margin-top: 40rpx;
+  flex-direction: column;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2rpx solid #dddddd;
+  padding-bottom: 50rpx;
+  margin-top: 40rpx;
+  position: relative;
+}
+.item:first-child{
+  margin-top: 0;
+}
+.item .left{
+  width: 171rpx;
+  height: 239rpx;
+  border-radius: 8rpx;
+}
+.item .left image{
+  width: 171rpx;
+  height: 239rpx;
+  border-radius: 8rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx #e8e8e8;
+}
+.item .right{
+  margin-left: 20rpx;
+  width:64%;
+  position: relative;
+}
+.bookName,.bookEditor,.bookPublish{
+  width:98%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.bookName{
+  font-size: 30rpx;
+}
+.bookGrade{
+  color:#999999;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.bookEditor,.bookPublish{
+  color:#929292;
+  font-size: 24rpx;
+}
+.bookEditor{
+  margin-top: 94rpx;
+}
+.icon-mendian-{
+  position: absolute;
+  right:0;
+  top:0rpx;
+  color:#ffa800;
+  font-size:40rpx;
+}
+.noDataBox{
+  width:100vw;
+  position: absolute;
+  top:45%;
+  left:50%;
+  transform: translate(-50%,-45%);
+}
+.noDataBox .box{
+  display: block;
+}
+.icon-meiyouguanzhu{
+  display: block;
+  font-size: 135rpx;
+  color:#000;
+  text-align: center;
+}
+.noDataBox .box .txt{
+  font-size: 37rpx;
+  color:#333333;
+  text-align: center;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,150 @@
+/* pages/zhuan/_components/Contribute/index.wxss */
+@import '/assets/iconfont/iconfont.wxss';
+
+.Contribute-box{
+  width:460rpx;
+  margin: 0 auto;
+  margin-top:102rpx;
+  animation: mysecond 1s;
+}
+@keyframes mysecond
+{
+  from {transform:translateX(-500rpx);opacity:0}
+  to {transform:translateX(0rpx);opacity:1}
+}
+.item{
+  position: relative;
+  height: 142rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #9055a2;
+}
+.item-title{
+  align-content: center;
+  position: absolute;
+  bottom: 35rpx;
+  left:0;
+  transition: bottom ease-in-out .5s;
+  width: 100%;
+}
+.item-title .content,.iconfont{
+  font-size: 32rpx;
+  color:#333333;
+  display: inline-block;
+  transition: all ease-in-out .5s;
+}
+.item-title .content{
+  margin-left: 8rpx;
+}
+.item-input{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.top-move{
+  bottom:57rpx;
+}
+.top-move-color{
+  color:#999999!important;
+  font-size: 22rpx!important;
+}
+.item-input input{
+  height:30rpx!important;
+  line-height: 30rpx!important;
+  padding-left: 10rpx!important;
+  font-size: 28rpx;
+  color:#333333;
+}
+
+.btn{
+  height: 85rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 85rpx;
+  color:#fff;
+  border-radius: 35rpx;
+  border: 1rpx solid #e7e7e7;
+  background: #929292;
+  box-shadow: 0 0 20rpx #e5e5e5;
+  font-size: 30rpx;
+  margin-top: 120rpx;
+  padding: 0!important;
+  transition:background .5s;
+}
+button[disabled] {
+  color:#fff!important;
+  background: #929292!important;
+  border: 1rpx solid #e7e7e7!important;
+}
+.placeholderClass{
+  font-size: 28rpx;
+  color:#333333;
+}
+.btnBgColor-on{
+  background:linear-gradient(45deg,#c88db5 ,#b77caf,#a167a8,#975da5);
+  transition:background .5s;
+}
+
+
+
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.state-item {
+  width: 20%;
+  height: 70rpx;
+  font-size: 11pt;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 2rpx solid #ddd;
+}
+
+.border.state-item {
+  border: 2rpx solid #c4245c;
+}
+
+.date {
+  min-width: 40%;
+  display: flex;
+  font-size: 11pt;
+  color: #bdbdbd;
+  align-items: center;
+}
+
+.date-btn {
+  min-width: 80%;
+  font-size: 12pt;
+  background-color: #c4245c;
+  color: #fff;
+  position: fixed
+}
+
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}

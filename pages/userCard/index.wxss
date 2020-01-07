@@ -1,0 +1,112 @@
+/* pages/userCard/index.wxss */
+@import "/assets/iconfont/iconfont.wxss";
+.box{
+  width:654rpx;
+  margin:0 auto;
+  flex-direction: column;
+}
+
+.item .item-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-top: 50rpx;
+  padding-bottom:40rpx;
+  border-bottom: 2rpx solid #dddddd;
+  position: relative;
+}
+.item:last-child{
+  margin-bottom: 20rpx;
+}
+.item .item-wrapper .left{
+  width:170rpx;
+  height: 240rpx;
+  border-radius: 8rpx;
+  box-shadow:3px 2px 4px #eaeaea; 
+}
+.item .item-wrapper .left image{
+  width:170rpx;
+  height: 240rpx;
+  border-radius: 8rpx;
+}
+.item .item-wrapper .right{
+  margin-left: 22rpx;
+  position: relative;
+  width:60%;
+}
+.bookName{
+  color:#999999;
+  font-size: 26rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.bookNum{
+  color:#333333;
+  font-size: 28rpx; 
+}
+.afterEdit{
+  color:#ffa800;
+  font-size: 22rpx;
+  position: absolute;
+  bottom: 0;
+  left:0;
+}
+.icon-shanchu{
+  color:#cccccc;
+  position: absolute;
+  bottom: 40rpx;
+  right: 0;
+  z-index: 1;
+}
+.delBtn{
+  position: absolute;
+  bottom: 40rpx;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  z-index: 99;
+  opacity: 0;
+}
+.time{
+  color:#929292;
+  font-size: 24rpx;
+  margin-top: 12rpx;
+}
+
+button.van-dialog__confirm{
+  color:#9055a2!important;
+}
+.item-bookName{
+  margin-right: 15rpx;
+}
+
+
+.noDataBox{
+  width:100vw;
+  position: absolute;
+  top:45%;
+  left:50%;
+  transform: translate(-50%,-45%);
+}
+.noDataBox .box{
+  display: block;
+}
+.icon-zanwudingdan{
+  display: block;
+  font-size: 135rpx;
+  color:#000;
+  text-align: center;
+}
+.noDataBox .box .txt{
+  font-size: 28rpx;
+  color:#333333;
+  text-align: center;
+  margin-top: 10rpx;
+}

@@ -1,0 +1,36 @@
+/* pages/aboutUs/index.wxss */
+.about-box{
+  width: 550rpx;
+  margin:0 auto;
+}
+.title{
+  width:100%;
+  color:#d499b9;
+  text-align: center;
+  height: 103rpx;
+  border-bottom:1rpx solid #333333;
+  position: relative;
+}
+.title .txt{
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  height: 103rpx;
+  line-height: 103rpx;
+}
+.block{
+  background-color: #fff;
+  width:184rpx;
+  height: 32rpx;
+  position: absolute;
+  bottom:-10rpx;
+  left:50%;
+  transform: translateX(-50%);
+  color:#333333;
+  font-size: 29rpx;
+}
+.content{
+  color:#333333;
+  font-size: 26rpx;
+  margin-top: 85rpx;
+}

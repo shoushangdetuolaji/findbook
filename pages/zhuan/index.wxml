@@ -1,0 +1,105 @@
+<!--pages/zhuan/index.wxml-->
+<!--WXML 自定义顶部状态栏div结构-->
+<!-- <view class='nav' style='height:{{navH}}px'>
+
+  <view class='title_text'>
+    找课本
+  </view>
+</view> -->
+
+<view class="container">
+  <!--头部切换栏-->
+  <view class="tab-switch">
+    <view class="switch-button {{rightMove}}">
+      <view class="content">{{switchContent}}</view>
+    </view>
+    <view class="switch-item" bindtap="bindContribute">
+      <view class="content">贡献书籍</view>
+    </view>
+     <view class="switch-item" bindtap="bindBorrow">
+      <view class="content">我要借书</view>
+     </view>
+  </view>
+  <!--头部切换栏 结束-->
+
+  <!--贡献书籍组件-->
+  <Contribute 
+    wx:if="{{switchHide}}"
+    areaInfo="{{areaInfo}}"
+    bind:myevent="onMyEvent"
+    canSubmitFlag3="{{canSubmitFlag3}}"/>
+  <!--贡献书籍组件 结束-->
+  <borrowBook 
+    wx:if="{{!switchHide}}" 
+    time="{{time}}" 
+    borrowList="{{borrowList}}"
+    bind:myevent="refreshBorrowData"
+    borrowBook_urls="{{borrowBook_urls}}"
+    borrowBook_bookid="{{borrowBook_bookid}}"/>
+</view>
+
+<view 
+  class="dialog-mask" 
+  style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" 
+  bindtap="hideCitySelected">
+</view>
+<!--城市三级联动-->
+<!--使用动画时不能wx:if="{{city.length>0&&isVisible}}" ，不能hidden=''属性否则无动画效果-->
+<view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+  <!-- <view style="height:10%;width:95%;margin-top:10rpx" class="picker-head"> -->
+  <view class="picker-head">
+    <text catchtap="cityCancel" style="color:#ccc;padding:0 40rpx;">取消</text>
+    <text style="float: right;color:#25b864;padding:0 40rpx;" catchtap="citySure">确定</text>
+  </view>
+  
+  <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+  <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" class="picker-item" wx:key="index">
+        {{item.name}}
+      </view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" class="picker-item" wx:key="index">
+        {{item.name}}
+      </view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{areas}}" class="picker-item" wx:key="index">
+        {{item.name}}
+      </view>
+    </picker-view-column>
+  </picker-view>
+</view>
+
+<!--时间picker-->
+<view class="fakePicker-box" wx:if="{{!switchHide}}">
+  <picker 
+    mode="multiSelector" 
+    bindchange="bindMultiPickerChange" 
+    bindcolumnchange="bindMultiPickerColumnChange" 
+    value="{{multiIndex}}" 
+    range="{{multiArray}}">  
+    <view>123</view> 
+  </picker>
+</view>
+
+<!--转转的引导页  贡献书籍-->
+<view
+  class="guide-box" 
+  wx:if="{{guidePageShow}}">
+  <swiper 
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    current="{{ltb_cur}}"
+    bindchange="swiperChange"
+    indicator-dots="{{indicatorDots}}" 
+    style="width:100vw;height:100vh">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
